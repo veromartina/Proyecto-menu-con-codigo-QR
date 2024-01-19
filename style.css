@@ -1,0 +1,138 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;/* el desplazamiento de la página web se suaviza y anima, lo que significa que el usuario experimentará un desplazamiento más suave y gradual al navegar por la página*/
+    list-style: none;
+    text-decoration: none;
+
+}
+body{
+    background: rgb(243, 231, 215);
+}
+.hero {
+   
+    position: relative;
+    width: 1000vw;
+    height: 600px;
+    padding: 0.1px;
+    background-image: url(./imagenes/arriba.jpg);
+    background-position: center;
+    background-size: cover;  
+    background-attachment: fixed;/*el fondo del elemento se mantiene fijo en su posición mientras el contenido de la página se desplaza.*/
+}
+
+
+.menu {
+    display: flex;
+    position: fixed;
+    background-color: rgb(241, 209, 166);
+    width: 100vw;
+    height: 50px;
+    max-width: 1200px;
+    min-width: 300px;
+    overflow: hidden;
+    margin: 0 auto;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.menu ul {
+    width:100%;
+    display: flex;
+    justify-content: flex-end;
+    cursor: pointer;
+    flex-direction: row;
+    align-items: center;
+}
+.fa-solid{
+    color: #040200;
+    margin-left: 20px;
+    
+}
+
+li a{ 
+    padding: 10px 65px;
+    display: block;
+    color: #040200;
+    font-size: 15px;
+    cursor: pointer;
+}
+h1{
+    color: antiquewhite;
+    font-size:60px;
+
+}
+
+.titulo {
+    display: flex;
+    max-width: 1000px;
+    min-width: 300px;
+    padding-top: 85px;
+    padding-left:10px ;
+    flex-wrap: wrap;
+    justify-content:left;
+
+ }
+
+.titulo p{
+    text-align: justify;
+    padding-left: 45px;
+    padding-right: 15px;
+    padding-top: 15px;
+
+}
+.contenedor{
+    display: flex;
+    flex-direction: column;
+    width: 95%;
+    max-width: 1000px;
+    min-width: 300px;
+    margin: 0 auto;
+    align-items: center;
+    position:relative;
+    z-index: -10;
+}
+
+.contenedor h2{
+    margin:15px 0 ;
+    /*filter:drop-shadow(5px 5px 5px red);prueba*/
+    position:relative;
+    text-shadow: 5px 5px 5px gray;
+}
+   
+.descripcion-menu {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex: 200px;
+    border: 1px solid rgb(0, 0, 9);
+    }
+      
+
+.descripcion-menu h4{
+    text-align: center;
+
+}
+
+img{
+    width: 200px;
+    height: 200px;
+    
+}
+
+.descripcion-menu p{
+    text-align: center;
+    padding: 5px;
+}
+
+footer{
+    display: flex;
+    justify-content:center;
+    align-items: center;
+    flex-wrap: wrap;
+    width: 100%;
+    height: 15dvh; /*Esta unidad es útil para hacer que los elementos se ajusten dinámicamente al tamaño de la ventana gráfica del dispositivo. Entonces, si el viewport cambia de tamaño (por ejemplo, si se redimensiona la ventana del navegador), el elemento con "height: 25dvh;" también cambiará su altura en consecuencia. */
+    background-color: rgb(241, 209, 166);
+}
