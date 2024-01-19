@@ -1,3 +1,13 @@
+
+:root{  /*raiz, porque quiero acceder a la raiz*/
+	 
+	--background-color: rgb(241, 209, 166);/*declaro una variable y le pongo valor*/
+    --titulo-principal: 'Lato', sans-serif; /*  ver el tipo de letra*/
+    --text-shadow: 5px 5px 5px gray;
+
+}
+
+
 *{
     margin: 0;
     padding: 0;
@@ -5,10 +15,12 @@
     scroll-behavior: smooth;/* el desplazamiento de la página web se suaviza y anima, lo que significa que el usuario experimentará un desplazamiento más suave y gradual al navegar por la página*/
     list-style: none;
     text-decoration: none;
+    /*cursor:url(./imagenes/manito.png),auto;  ejemplo de crursor con imagen . el cursos no cambia en ul porqie por defecto siempre es una manito */
 
 }
 body{
     background: rgb(243, 231, 215);
+   
 }
 .hero {
    
@@ -26,7 +38,7 @@ body{
 .menu {
     display: flex;
     position: fixed;
-    background-color: rgb(241, 209, 166);
+    background-color: var(--background-color);
     width: 100vw;
     height: 50px;
     max-width: 1200px;
@@ -36,13 +48,14 @@ body{
     flex-direction: row;
     align-items: center;
     justify-content: space-around;
+   
 }
 
 .menu ul {
     width:100%;
     display: flex;
     justify-content: flex-end;
-    cursor: pointer;
+    /*cursor: pointer;*/
     flex-direction: row;
     align-items: center;
 }
@@ -83,6 +96,19 @@ h1{
     padding-top: 15px;
 
 }
+.codigo{
+    width: 100%;
+    display: flex;
+    flex-direction:row;
+    align-items: center;
+    
+}
+.codigo img{
+    width: 200px;
+    height: 250px;
+    text-align: center;
+}
+
 .contenedor{
     display: flex;
     flex-direction: column;
@@ -126,6 +152,9 @@ img{
     text-align: center;
     padding: 5px;
 }
+.pseudos-clases p:first-of-type{ /*realizo cambio en el primer parrafo del contenedor padre,siendo los demas hijos de diferentes tipos*/
+    text-shadow: var(--text-shadow); 
+}
 
 footer{
     display: flex;
@@ -134,5 +163,19 @@ footer{
     flex-wrap: wrap;
     width: 100%;
     height: 15dvh; /*Esta unidad es útil para hacer que los elementos se ajusten dinámicamente al tamaño de la ventana gráfica del dispositivo. Entonces, si el viewport cambia de tamaño (por ejemplo, si se redimensiona la ventana del navegador), el elemento con "height: 25dvh;" también cambiará su altura en consecuencia. */
-    background-color: rgb(241, 209, 166);
+    background-color: var(--background-color);/*uso la variable que declare arriba */
+}
+.enlaces{
+    display: flex;
+    width: 20%;
+    flex-wrap: nowrap;
+    justify-content: space-around;
+}
+.enlaces a{
+    color: rgb(8, 6, 6);
+       
+}
+.enlaces a:active{
+    font-size: 2rem;
+    color:rgb(72, 53, 3);
 }
