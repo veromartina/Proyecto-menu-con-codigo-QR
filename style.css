@@ -1,115 +1,159 @@
+@import url('https://fonts.cdnfonts.com/css/fantasia');/*letra de fantasia*/
+@import url(normalize.css);
 
-:root{  /*raiz, porque quiero acceder a la raiz*/
-	 
-	--background-color: rgb(241, 209, 166);/*declaro una variable y le pongo valor*/
-    --titulo-principal: 'Lato', sans-serif; /*  ver el tipo de letra*/
-    --text-shadow: 5px 5px 5px gray;
+:root {
+    /*raiz, porque quiero acceder a la raiz*/
 
+    --background-color: rgb(241, 209, 166);
+    /*declaro una variable y le pongo valor*/
+    --titulo-principal:'Fantasia', sans-serif;
+    /*  ver el tipo de letra*/
+    --text-shadow: 15px 15px 5px  rgb(5, 3, 0);
+    --text-shadow-1: 5px 5px 5px  rgb(152, 148, 142);
 }
 
 
-*{
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    scroll-behavior: smooth;/* el desplazamiento de la página web se suaviza y anima, lo que significa que el usuario experimentará un desplazamiento más suave y gradual al navegar por la página*/
+    scroll-behavior: smooth;
+    /* el desplazamiento de la página web se suaviza y anima, lo que significa que el usuario experimentará un desplazamiento más suave y gradual al navegar por la página*/
     list-style: none;
     text-decoration: none;
     /*cursor:url(./imagenes/manito.png),auto;  ejemplo de crursor con imagen . el cursos no cambia en ul porqie por defecto siempre es una manito */
+    font-family: Arial, Helvetica, sans-serif;
 
 }
-body{
-    background: rgb(243, 231, 215);
-   
+
+body {
+    background-color: rgba(255, 201, 76, 0.427);
+    background-image: linear-gradient(to left, rgba(172, 170, 170, 0.47), 60%, rgba(246, 199, 111, 0.437)),url(./imagenes/arriba1.jpg);
+    background-attachment: fixed;
+    background-size: cover;
+
 }
+
 .hero {
-   
+    display: flex;
+    flex-direction: column;
     position: relative;
     width: 1000vw;
-    height: 600px;
+    max-width: 1300px;
+    min-width: 300px;
+    height: 650px;
+    min-height: 200px;
     padding: 0.1px;
-    background-image: url(./imagenes/arriba.jpg);
+    background-image:linear-gradient(to bottom, rgba(128, 128, 128, 0.804), 50%,rgba(255, 166, 0, 0.658)),url(./imagenes/arriba.jpg);
     background-position: center;
-    background-size: cover;  
-    background-attachment: fixed;/*el fondo del elemento se mantiene fijo en su posición mientras el contenido de la página se desplaza.*/
+    background-size: cover;
+    background-attachment: fixed;
+    /*el fondo del elemento se mantiene fijo en su posición mientras el contenido de la página se desplaza.*/
 }
 
 
 .menu {
     display: flex;
+    flex-wrap: wrap;
     position: fixed;
     background-color: var(--background-color);
-    width: 100vw;
+    width: 1000vw;
     height: 50px;
     max-width: 1200px;
     min-width: 300px;
     overflow: hidden;
     margin: 0 auto;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-around;
-   
+    flex-wrap: wrap;
+    align-content: center;
+    z-index: 20;
+
 }
 
-.menu ul {
-    width:100%;
+/* utilizo pseudoelementos para poner el QR */
+.hero::after {
+    content: url(./imagenes/codigo.png);    
+    display: block;
+    position: absolute;
+    bottom: 35%;
+    right: calc(50%);
+    width: 5%;
+    height: 5%;
+ 
+}
+
+.menu ul{
+    width: 100%;
+    min-width:200px;
+    max-width: 1200px;
     display: flex;
+    flex-wrap: wrap;
     justify-content: flex-end;
     /*cursor: pointer;*/
-    flex-direction: row;
-    align-items: center;
-}
-.fa-solid{
-    color: #040200;
-    margin-left: 20px;
-    
 }
 
-li a{ 
-    padding: 10px 65px;
+li a{
+    padding: 10px 25px;
     display: block;
     color: #040200;
     font-size: 15px;
     cursor: pointer;
 }
-h1{
-    color: antiquewhite;
-    font-size:60px;
+.fa-solid {
+    font-weight: 900;
+    display: flex;
+    margin-top: 0.5%;
+    margin-right: 45%;
+    font-size: x-large;
+}
+h1 {
+    font-family: var(--titulo-principal); /*uso variable para el tipo de letra*/
+    color:rgb(255, 201, 76);
+    text-shadow: var(--text-shadow); /*sombra al texto*/;
+    font-size: 80px;
+    text-align: center;
+    margin-left: 25%;
+    margin-right: 25%;
+    margin-top: -1%;
+    margin-bottom: 1%;
 
 }
 
 .titulo {
     display: flex;
-    max-width: 1000px;
-    min-width: 300px;
-    padding-top: 85px;
-    padding-left:10px ;
     flex-wrap: wrap;
-    justify-content:left;
-
- }
-
-.titulo p{
-    text-align: justify;
-    padding-left: 45px;
-    padding-right: 15px;
-    padding-top: 15px;
+    justify-content: left;
+    max-width: 1200px;
+    min-width: 200px;
+    padding-top: 85px;
+    padding-left: 10px;  
 
 }
-.codigo{
+
+.titulo p {
+    max-width: 1200px;
+    min-width: 200px;
+    text-align: justify;
+    padding-top: 10px;
+    margin-bottom: 5px;
+    font-family:cursive;
+    font-size: small;
+}
+
+.codigo {
     width: 100%;
     display: flex;
-    flex-direction:row;
+    flex-direction: row;
     align-items: center;
-    
+
 }
-.codigo img{
+
+.codigo img {
     width: 200px;
     height: 250px;
     text-align: center;
 }
 
-.contenedor{
+.contenedor {
     display: flex;
     flex-direction: column;
     width: 95%;
@@ -117,65 +161,94 @@ h1{
     min-width: 300px;
     margin: 0 auto;
     align-items: center;
-    position:relative;
+    position: relative;
     z-index: -10;
+
+   
 }
 
-.contenedor h2{
-    margin:15px 0 ;
+.contenedor h2 {
+    font-family:cursive;
+    font-size: 30px;
+  
+    margin: 15px 0;
     /*filter:drop-shadow(5px 5px 5px red);prueba*/
-    position:relative;
-    text-shadow: 5px 5px 5px gray;
+    position: relative;
+    text-shadow:5px 5px 5px rgb(184, 136, 49);
+
 }
-   
+section{
+    padding: 20px 0;
+}
+
 .descripcion-menu {
     display: flex;
     flex-direction: column;
     align-items: center;
-    flex: 200px;
+    flex: 350px;
     border: 1px solid rgb(0, 0, 9);
-    }
-      
-
-.descripcion-menu h4{
-    text-align: center;
-
-}
-
-img{
-    width: 200px;
-    height: 200px;
+    background-color: rgba(250, 235, 215, 0.405);
+    background-repeat: repeat;
     
 }
 
-.descripcion-menu p{
+
+.descripcion-menu h4 {
     text-align: center;
-    padding: 5px;
+    font-family:cursive;
+    font-size: 20px;
+
+
 }
-.pseudos-clases p:first-of-type{ /*realizo cambio en el primer parrafo del contenedor padre,siendo los demas hijos de diferentes tipos*/
-    text-shadow: var(--text-shadow); 
+.pseudos-clases{
+    padding: 15px 0;
 }
 
-footer{
+img {
+    width: 200px;
+    height: 200px;
+
+}
+
+.descripcion-menu p {
+    text-align: center;
+    padding: 5px;
+    font-size: small;
+    font-family: cursive;
+}
+
+/*aplico estilo con pseudoclase. La pseudoclase :nth-child(A) permite especificar el elemento hijo deseado, simplemente estableciendo su número en el parámetro A. No obstante, hay que tener en cuenta que el parámetro A no es sólo un número, sino que es posible escribir ciertas expresiones:(odd/par,even/impar,3n,n 2n-1)*/
+.pseudos-clases p:nth-child(even) {
+    
+    text-shadow: var(--text-shadow-1); /*sombra al texto*/
+}
+
+footer {
     display: flex;
-    justify-content:center;
+    justify-content: center;
     align-items: center;
     flex-wrap: wrap;
     width: 100%;
-    height: 15dvh; /*Esta unidad es útil para hacer que los elementos se ajusten dinámicamente al tamaño de la ventana gráfica del dispositivo. Entonces, si el viewport cambia de tamaño (por ejemplo, si se redimensiona la ventana del navegador), el elemento con "height: 25dvh;" también cambiará su altura en consecuencia. */
-    background-color: var(--background-color);/*uso la variable que declare arriba */
+    height: 15dvh;
+    /*Esta unidad es útil para hacer que los elementos se ajusten dinámicamente al tamaño de la ventana gráfica del dispositivo. Entonces, si el viewport cambia de tamaño (por ejemplo, si se redimensiona la ventana del navegador), el elemento con "height: 25dvh;" también cambiará su altura en consecuencia. */
+    background-color: var(--background-color);
+    /*uso la variable que declare arriba */
 }
-.enlaces{
+
+.enlaces {
     display: flex;
     width: 20%;
     flex-wrap: nowrap;
     justify-content: space-around;
 }
-.enlaces a{
-    color: rgb(8, 6, 6);
-       
+
+.enlaces a {
+    color: rgb(22, 19, 13);
+    font-size: x-large;
+
 }
-.enlaces a:active{
+
+.enlaces a:active { /* pseudo clase para los link,mango el click y cambia de color el icono*/
     font-size: 2rem;
-    color:rgb(72, 53, 3);
+    color: rgb(252, 182, 5);
 }
