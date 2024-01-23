@@ -218,23 +218,30 @@ img {
     text-shadow: var(--text-shadow-1); /*sombra al texto*/
 }
 
-footer {
+.pie {
     display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-wrap: wrap;
+    flex-direction: column;
     width: 100%;
     height: 15dvh;
-    /*Esta unidad es útil para hacer que los elementos se ajusten dinámicamente al tamaño de la ventana gráfica del dispositivo. Entonces, si el viewport cambia de tamaño (por ejemplo, si se redimensiona la ventana del navegador), el elemento con "height: 25dvh;" también cambiará su altura en consecuencia. */
+    justify-content: center;
+    align-items: center;
+    
+    /*Esta unidad es útil para hacer que los elementos se ajusten dinámicamente al tamaño de la ventana gráfica del dispositivo. Entonces, si el viewport cambia de tamaño (por ejemplo, si se redimensiona la ventana del navegador), el elemento con "height: 15dvh;" también cambiará su altura en consecuencia. */
     background-color: var(--background-color);
     /*uso la variable que declare arriba */
+}
+.pie p{
+    margin-left: 15px;
+
 }
 
 .enlaces {
     display: flex;
-    width: 20%;
+    width: 40%;
+    max-width: 90%;
+    margin: 0 auto;
     flex-wrap: nowrap;
-    justify-content: space-around;
+    justify-content:space-around;
 }
 
 .enlaces a {
